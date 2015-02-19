@@ -29,15 +29,14 @@ public class MainActivity extends Activity {
 	    }
 	}
 	public void printhour(View view){
-		
 		Context context = getApplicationContext();
 		TimePicker t =new TimePicker(context);
 		String s = t.getCurrentHour().toString()+":"+t.getCurrentMinute();
 		//CharSequence text = "test";
-		int duration = Toast.LENGTH_SHORT; // Durée d'affichage du toast (LENGTH_SHORT: Valeur par défaut) 
-		playSound(R.raw.alarme);
-		Toast toast = Toast.makeText(context, s, duration); // Parametrage du Toast 
-		toast.show(); // Affichage du Toast 
+		int duration = Toast.LENGTH_SHORT;
+		 playSound(R.raw.alarme);
+		Toast toast = Toast.makeText(context, s, duration);
+		toast.show();
 	}
 	
 	public void changeView(View view){
@@ -54,6 +53,4 @@ public class MainActivity extends Activity {
 	    mPlayer = MediaPlayer.create(this, resId);
 	    mPlayer.start();
 	}
-	
-	
 }
