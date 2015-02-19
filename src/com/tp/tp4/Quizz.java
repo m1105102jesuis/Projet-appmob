@@ -3,6 +3,7 @@ package com.tp.tp4;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -12,6 +13,8 @@ import android.view.ViewGroup;
 import android.os.Build;
 
 public class Quizz extends ActionBarActivity {
+	
+	private MediaPlayer mPlayer = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +64,14 @@ public class Quizz extends ActionBarActivity {
 		}
 	}
 	
+	private void playSound(int resId) {
+	    if(mPlayer != null) {
+	        mPlayer.stop();
+	        mPlayer.release();
+	    }
+	    mPlayer = MediaPlayer.create(this, resId);
+	    mPlayer.start();
+	}
 	
 
 }

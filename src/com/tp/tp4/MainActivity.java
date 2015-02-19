@@ -3,6 +3,7 @@ package com.tp.tp4;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -39,8 +40,13 @@ public class MainActivity extends Activity {
 		toast.show(); // Affichage du Toast 
 	}
 	
+	public void changeView(View view){
+        Intent it = new Intent(this, Quizz.class);
+        startActivity(it);
+        this.finish();
+	}
+	
 	private void playSound(int resId) {
-		aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 	    if(mPlayer != null) {
 	        mPlayer.stop();
 	        mPlayer.release();
